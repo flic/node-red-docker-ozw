@@ -9,7 +9,8 @@ RUN cd /usr/src/open-zwave \
     && make \
     && make install
 RUN ldconfig /usr/local/lib64
-RUN npm install openzwave-shared
+RUN cd /usr/src/node-red \
+    && npm install openzwave-shared
 
 USER node-red
 RUN cd /data \
